@@ -14,14 +14,24 @@ function mapToSquare(sourceArray) {
   return sourceArray.map(x => x ** 2)
 }
 
-function reduceToTotal(sourceArray, startingPoint = 0) {
-  return sourceArray.reduce((accumulator, currentValue) => accumulator + currentValue)
+function reduceToTotal(src, startingPoint=0) {
+  let total = startingPoint
+  for (let i = 0; i < src.length; i++ ) {
+    total = total + src[i]
+  }
+  return total
 }
 
-function reduceToAllTrue(sourceArray) {
-  return sourceArray
+function reduceToAllTrue(src) {
+  for (let i = 0; i < src.length; i++ ) {
+    if (!src[i]) return false
+  }
+  return true
 }
 
-function reduceToAnyTrue(sourceArray) {
-  return sourceArray
+function reduceToAnyTrue(src) {
+  for (let i = 0; i < src.length; i++ ) {
+    if (src[i]) return true
+  }
+  return false
 }
